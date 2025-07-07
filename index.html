@@ -6,86 +6,104 @@
   <title>Bali Departure Countdown</title>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Baloo 2', sans-serif;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      overflow: hidden;
-    }
+.sunrise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg, rgba(255, 204, 102, 0.15), rgba(255, 255, 255, 0));
+  animation: sunriseMove 20s ease-in-out infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
 
-    body {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
-    }
+@keyframes sunriseMove {
+  0% { transform: translateY(0); opacity: 0.3; }
+  100% { transform: translateY(-30px); opacity: 0.6; }
+}
 
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url('https://raw.githubusercontent.com/bamboshek/bali/a2728dd17b0713d0b710940937a897e0a792583c/Zrzut%20ekranu%202025-07-7%20o%2011.05.40.png') center center / cover no-repeat;
-      z-index: -1;
-      animation: zoom 30s ease-in-out infinite alternate;
-    }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Baloo 2', sans-serif;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  overflow: hidden;
+}
 
-    @keyframes zoom {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.05); }
-    }
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
 
-    h1 {
-      font-size: 2rem;
-      margin: 0 1rem 1.5rem;
-      background-color: rgba(0,0,0,0.4);
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      text-align: center;
-    }
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://raw.githubusercontent.com/bamboshek/bali/a2728dd17b0713d0b710940937a897e0a792583c/Zrzut%20ekranu%202025-07-7%20o%2011.05.40.png') center center / cover no-repeat;
+  z-index: -1;
+  animation: zoom 30s ease-in-out infinite alternate;
+}
 
-    #countdown {
-      font-size: 1.8rem;
-      background-color: rgba(0,0,0,0.6);
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-      text-align: center;
-    }
+@keyframes zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
 
-    .emoji {
-      font-size: 2rem;
-      margin-top: 1rem;
-      animation: floatEmoji 4s ease-in-out infinite;
-    }
+h1 {
+  font-size: 2rem;
+  margin: 0 1rem 1.5rem;
+  background-color: rgba(0,0,0,0.4);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
 
-    @keyframes floatEmoji {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+#countdown {
+  font-size: 1.8rem;
+  background-color: rgba(0,0,0,0.6);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5rem;
-        padding: 0.8rem 1.2rem;
-      }
-      #countdown {
-        font-size: 1.5rem;
-        padding: 0.8rem 1.2rem;
-      }
-      .emoji {
-        font-size: 1.5rem;
-      }
-    }
+.emoji {
+  font-size: 2rem;
+  margin-top: 1rem;
+  animation: floatEmoji 4s ease-in-out infinite;
+}
+
+@keyframes floatEmoji {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.2rem;
+  }
+  #countdown {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.2rem;
+  }
+  .emoji {
+    font-size: 1.5rem;
+  }
+}
   </style>
 </head>
 <body>
+  <div class="sunrise"></div>
   <div class="background"></div>
   <h1>Odliczanie do wyjazdu Ani i Bartosza na Bali 🌴</h1>
   <div id="countdown"></div>
