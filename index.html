@@ -31,7 +31,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: url('https://cdn.pixabay.com/photo/2020/03/09/04/44/rice-terrace-4912164_1280.jpg') center center / cover no-repeat;
+      background: url('https://images.unsplash.com/photo-1578894380252-1410fe040f7d?auto=format&fit=crop&w=1950&q=80') center center / cover no-repeat;
       z-index: -1;
       animation: zoom 30s ease-in-out infinite alternate;
     }
@@ -46,75 +46,4 @@
       margin: 0 1rem 1.5rem;
       background-color: rgba(0,0,0,0.4);
       padding: 1rem 2rem;
-      border-radius: 1rem;
-      text-align: center;
-    }
-
-    #countdown {
-      font-size: 1.8rem;
-      background-color: rgba(0,0,0,0.6);
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-      text-align: center;
-    }
-
-    .emoji {
-      font-size: 2rem;
-      margin-top: 1rem;
-      animation: floatEmoji 4s ease-in-out infinite;
-    }
-
-    @keyframes floatEmoji {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5rem;
-        padding: 0.8rem 1.2rem;
-      }
-      #countdown {
-        font-size: 1.5rem;
-        padding: 0.8rem 1.2rem;
-      }
-      .emoji {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="background"></div>
-  <h1>Odliczanie do wyjazdu Ani i Bartosza na Bali 🌴</h1>
-  <div id="countdown"></div>
-  <div class="emoji">🌅🏝️🍍🧘‍♂️✈️</div>
-
-  <script>
-    const countdownElement = document.getElementById('countdown');
-
-    function updateCountdown() {
-      const departureDate = new Date('2025-11-26T08:40:00');
-      const now = new Date();
-      const diff = departureDate - now;
-
-      if (diff <= 0) {
-        countdownElement.innerText = "Jesteście już w drodze na Bali! 🏖️";
-        clearInterval(timer);
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdownElement.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
-  </script>
-</body>
-</html>
+      bord
